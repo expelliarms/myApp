@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Vodafone U only for You!
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	  <p>
+	    "Vodafone U" is specifically designed to cater to your needs of Internet, Calls, Entertainment and More! The benefits of using Vodafone U are. Internet. Additional Data Quota on SuperNet (3G).
+	  </p>
+    <button ion-button center round (click)="getRecs(2)">Today's offers</button>
+	<ion-list>    
+        <ion-item *ngFor="let offer of offers" (click)="selectOffer($event, offer)">
+            <ion-avatar item-left>
+                <img src="https://static.thenounproject.com/png/57886-200.png"/>
+            </ion-avatar>
+            <h2>{{offer}}</h2>
+        </ion-item>
+    </ion-list>
+</ion-content>

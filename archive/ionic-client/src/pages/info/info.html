@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Congrats!</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+ 
+<ion-content class="home" padding>
+    <div *ngIf="offer" class="selection">
+        <ion-card>
+            <ion-item>
+                <ion-avatar item-left image-large>
+                    <img src="https://static.thenounproject.com/png/27496-200.png"/>
+                </ion-avatar>
+                <h3>{{offer}}</h3>
+                <p>Congrats! Enjoy your offer</p>
+            </ion-item>
+ 
+            
+        </ion-card>
+    </div>
+</ion-content>

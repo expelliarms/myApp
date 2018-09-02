@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Discover</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+        <ion-label color="primary" stacked>Search Offers</ion-label>
+        <ion-input type="text" (input)="searchForMovie($event, searchKey)"></ion-input>
+    </ion-item>
+ 
+    <ion-list>    
+        <ion-item *ngFor="let movie of movies" (click)="selectMovie($event, movie)">
+            <ion-avatar item-left>
+                <img src="https://previews.123rf.com/images/dstarky/dstarky1708/dstarky170800474/84778506-gift-icon-in-outline-style-.jpg"/>
+            </ion-avatar>
+            <h2>{{movie.offerTitle}}</h2>
+            <p class="item-description">Enjoy your offer!</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

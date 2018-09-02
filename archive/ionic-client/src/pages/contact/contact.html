@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Redeemed Offers
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>    
+        <ion-item *ngFor="let offer of offers" (click)="selectOffer($event, offer)">
+            <ion-avatar item-left>
+                <img src="https://static.thenounproject.com/png/27316-200.png"/>
+            </ion-avatar>
+            <h2>{{offer}}</h2>
+        </ion-item>
+    </ion-list>
+</ion-content>

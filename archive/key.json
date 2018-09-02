@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "yohovodafoneu",
+  "private_key_id": "45fdf932771b36e2ee6b0dba0b5130d40eea699d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC23gQ0DhRFn7Q4\nk8l0WAWpn4KjKrU48000xnJ/sRHDb9XZp8rEONIYMLqtVtAxkH/JfIbSAOivPeWx\nu1vRmCTcvrYOI1EElsveY7ZwZdesG+Fof4Ijmp47HuW8amyyaMHpXgqUAppSfZhW\n5/3jZ7TVWA0vcn1B9B1WtAyNz9g9d1gG7BL+lddTZlIQX4qv6EBwdYqZvhZFAJZR\nykhjj0Ud/lthqi/GSszmxzcp0tLAIkvzB+5ZoWaQERGj2imU7tfH2DPDosax2t1Z\ns/1OPzJrgvazg7wGmiZ53grDUNsInubGOz57axWCdsKntBVnM00jpwEp8KEWIi9k\neh/+rLK7AgMBAAECggEALQDRdwAaBBJsF1pjgyLgbeCoFUC+7Z+O2hSWfA9XKEo/\nDjwpfgXfyn0/i8YoIXKGyE7BnTAFE49/ljBeReQT+lFi23Lcju0PihDvBpVBsQUB\ngaaTn/B+zVzqu+ZTDssSIbz3jHphgTiQg56/UDYm/jQXtpwN8GvDxqEzz7idZm6s\nc8HU9+AN85jIkVJW92F/TYoxHY7I/bSgIdg9bQmqlrHGZwYFXrjd3PyCDYAugLVu\n1A8GEbooQzlDZk50e3cyScPUT2r2aW9lOKGshAo2bO0Dd8HAx9VujosujGInGYGc\nCdk/jcFwLqLDBoToq3+BThxE8kBDlLrr97vlYfKroQKBgQDcIJjjj+ZI8EgByuRh\nBMeUYZFah7lnvboikRj7400eGpG7eP1DYIAUeLQzUFyBmi1kHYgHjh39OUztOWLX\nthLwUJSGXLGV/Mg9qd3bXYIPU6E7TYH5yHFyN6Cs7emmbFJEgltZdRY9Uh0D5q3c\nEAW1+sj7khr55spKIF/+0QEuIQKBgQDUqvsjBlLU6AoEluyrqTMe+YLa4OsQDqp9\nxtRPL97cHPcier5ccBryXfUwoC61Qg1TLAwBm40Hx8UsCJkx88CZcfH4628HxAkh\nKJquAQtRV/fSASxUCdsMr1oBzb3Qb7/ycBtUsiC4WO//9DDAXJR0mnMqyDf4W2va\nJRTVknWtWwKBgFIMpHBN9txBE9X3NmEjUvDv3SoNZQJSKcswokthUiFibeefFWfD\n1HnM8/4ceh6kxT6H82g9hNgaP548wab96tlAb9wVOOxbKJgzdMqLdCsaVQKxxTzB\nhee47F8I3wp1XcTDgiE6D2wT61TE6xEXt8k5DSkYMI3thIFUx/NHHFWBAoGAOSXV\nJJ1PZu0PvBn+cUafeSRdeInWQNNgFzp11O2tOoMCGh7XxqlNZHHBMJbq1kRwpjgA\n5fGx3TRelK2e1SCGUfWfq19Az9prBaEOp9GaA/ramnE8Qzz+wxLf4foylq9g6job\n7g+L4V3s6F/rNdXrAsZ6SjXRbIjMm6s5RQb9Xl8CgYAhgig+ZYTlxP89/Ok7Ilse\n/bhJ9N6jRiJepneTTtg9Jb9OJ8BRMO9rM7shahs7TrBMXLJGcVKCL6Qd8JY8FDbq\nPfQ/enGMZV9PuTIVT7CSrd5qsEpRHXLFSfuJvgykxH8uoxPEdna6o3eY4YnrwMhC\n2DT4RnUcjHL66f69hKi3jA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "yoho-vodafoneu@yohovodafoneu.iam.gserviceaccount.com",
+  "client_id": "104420389867507802163",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/yoho-vodafoneu%40yohovodafoneu.iam.gserviceaccount.com"
+}

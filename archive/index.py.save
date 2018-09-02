@@ -1,0 +1,112 @@
+#!/usr/bin/python
+
+print
+
+
+
+import numpy as np
+import csv
+from scipy.sparse import csr_matrix
+from scipy.sparse import csc_matrix
+import math as mt
+from sparsesvd import sparsesvd
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="12345678",
+  database="vodafone"
+)
+
+print mydb
+
+#constants defining the dimensions of our User Rating Matrix (URM)
+MAX_PID = 5
+MAX_UID = 4
+
+def readUrm():
+	urm = np.zeros(shape=(MAX_UID,MAX_PID), dtype=np.float32)
+        mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+
+          print(x)
+	with open('dataset.csv', 'rb') as trainFile:
+		urmReader = csv.reader(trainFile, delimiter=',')
+		for row in urmReader:
+			urm[int(row[0]), int(row[1])] = float(row[2])
+	return csr_matrix(urm, dtype=np.float32), csc_matrix(urm, dtype=np.float32)
+
+def readUsersTest():
+	uTest = dict()
+	with open("test_sample.csv", 'rb') as testFile:
+		testReader = csv.reader(testFile, delimiter=',')
+		for row in testReader:
+			uTest[int(row[0])] = list()
+
+	return uTest
+
+def getMoviesSeen():
+	moviesSeen = dict()
+	with open("dataset.csv", 'rb') as trainFile:
+		urmReader = csv.reader(trainFile, delimiter=',')
+		for row in urmReader:
+			try:
+				moviesSeen[int(row[0])].append(int(row[1]))
+			except:
+				moviesSeen[int(row[0])] = list()
+				moviesSeen[int(row[0])].append(int(row[1]))
+
+	return moviesSeen
+
+def computeSVD(urm, urm_csc, K):
+	U, s, Vt = sparsesvd(urm_csc, K)
+
+	dim = (len(s), len(s))
+	S = np.zeros(dim, dtype=np.float32)
+	for i in range(0, len(s)):
+		S[i,i] = mt.sqrt(s[i])
+
+	U = csr_matrix(np.transpose(U), dtype=np.float32)
+	S = csr_matrix(S, dtype=np.float32)
+	Vt = csr_matrix(Vt, dtype=np.float32)
+
+	return U, S, Vt
+
+
+def computeEstimatedRatings(urm, U, S, Vt, uTest, moviesSeen, K, test):
+	rightTerm = S*Vt 
+
+	estimatedRatings = np.zeros(shape=(MAX_UID, MAX_PID), dtype=np.float16)
+	for userTest in uTest:
+		prod = U[userTest, :]*rightTerm
+
+		#we convert the vector to dense format in order to get the indices of the movies with the best estimated ratings 
+		estimatedRatings[userTest, :] = prod.todense()
+		recom = (-estimatedRatings[userTest, :]).argsort()[:15]
+		for r in recom:
+			if r not in moviesSeen[userTest]:
+				uTest[userTest].append(r)
+
+				#if len(uTest[userTest]) == 5:
+					#break
+					
+
+	return uTest
+
+def main():
+	K = 2
+	urm, urm_csc = readUrm()
+	U, S, Vt = computeSVD(urm, urm_csc, K)
+	uTest = readUsersTest()
+	moviesSeen = getMoviesSeen()
+	uTest = computeEstimatedRatings(urm_csc, U, S, Vt, uTest, moviesSeen, K, True)
+	print uTest
+
+main()

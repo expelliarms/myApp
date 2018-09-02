@@ -1,0 +1,17 @@
+{
+  "name": "vodafoneu",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "c529a0c2",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path":"/vodafoneu",
+      "proxyUrl": "http://172.31.98.84/vodafoneu"
+    }
+  ]
+}
